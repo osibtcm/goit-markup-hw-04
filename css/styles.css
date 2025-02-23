@@ -32,8 +32,11 @@ a {
     margin: 0 auto; 
 } 
 .page-header {
-        border-bottom: 1px solid #e7e9fc;
-    }
+    border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
+}
 .header-container {
     display: flex;
     align-items: center;
@@ -72,13 +75,36 @@ font-family: 'Raleway', sans-serif;
     gap: 40px;
 }
 .header-link {
-    display: block;
-    padding: 24px 0;
+display: block;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #2e2f42;
+    padding-bottom: 24px;
+    padding-top: 24px;
+}
+.header-link-start{
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #404bbf;
+        padding-bottom: 24px;
+        padding-top: 24px;
+        position: relative;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+.header-link-start::after {
+    content: '';
+    border-radius: 2px;
+    left: 0;
+    bottom: -1px;
+    width: 48px;
+    height: 4px;
+    position: absolute;
+    background-color: #404bbf;
 }
 .address {
     font-style: normal;
@@ -107,7 +133,7 @@ font-family: 'Raleway', sans-serif;
     /* Header finish */
 .order  {
     background-color: #2e2f42;
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
                 rgba(46, 47, 66, 0.7)),
             url(../images/people-office.svg);
         background-repeat: no-repeat;
@@ -232,7 +258,9 @@ font-family: 'Raleway', sans-serif;
         width: calc((100% - 72px) / 4);
         border-radius: 0 0 4px 4px;
         overflow: hidden;
-        background-color: #fff;
+        box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+            0px 1px 1px rgba(46, 47, 66, 0.16),
+            0px 2px 1px rgba(46, 47, 66, 0.08);
     }
 .team-list img {
         width: 100%;
@@ -352,9 +380,8 @@ font-family: 'Raleway', sans-serif;
      transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
- /* Ефект при наведенні */
- .portfolio-li:hover .portfilio-wrapper-text-p {
-     transform: translateY(0);
+.portfolio-item:hover .portfilio-wrapper-text {
+    transform: translateY(0);
  }
 
  .portfilio-wrapper-text {
