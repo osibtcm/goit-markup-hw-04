@@ -107,8 +107,16 @@ font-family: 'Raleway', sans-serif;
     /* Header finish */
 .order  {
     background-color: #2e2f42;
-    padding-top: 188px;
-    padding-bottom: 188px;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+                rgba(46, 47, 66, 0.7)),
+            url(../images/people-office.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-top: 188px;
+        padding-bottom: 188px;
+        max-width: 1440px;
+        margin: 0 auto;
 }
 .order-head {
     font-weight: 700;
@@ -123,18 +131,19 @@ font-family: 'Raleway', sans-serif;
 }
 .button-order {
     display: block;
-    border: none;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    color: #fff;
-    background-color: #4d5ae5;
-    cursor: pointer;
-    height: 56px;
-    min-width: 169px;
-    margin: 0 auto;
-    border-radius: 4px;
+        border: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        color: #fff;
+        background-color: #4d5ae5;
+        cursor: pointer;
+        height: 56px;
+        min-width: 169px;
+        margin: 0 auto;
+        border-radius: 4px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     
 .button-order:focus,
@@ -147,25 +156,26 @@ font-family: 'Raleway', sans-serif;
 }
 .futures-main-head {
     font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11;
-    letter-spacing: 0.02em;
-    text-align: center;
-    color: #2e2f42;
-    text-transform: capitalize;
+        font-size: 36px;
+        line-height: 1.11;
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: #2e2f42;
+        text-transform: capitalize;
+        margin-bottom: 72px;
 
 }
 .visually-hidden {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
 }
 .futures-list {
         display: flex;
@@ -174,13 +184,25 @@ font-family: 'Raleway', sans-serif;
 .futures-item {
     width: calc((100% - 72px) / 4);
 }
+.futures-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f4f4fd;
+        border-radius: 4px;
+        border: 1px solid #8e8f99;
+        margin-bottom: 8px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        height: 112px;
+}
 .futures-head {
     font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    color: #2e2f42;
-    margin-bottom: 8px;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        color: #2e2f42;
+        margin-bottom: 8px;
 }
 .futures-head-text {
     font-size: 16px;
@@ -234,6 +256,44 @@ font-family: 'Raleway', sans-serif;
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
+}
+
+.team-svg {
+    display: flex;
+    justify-content: center;
+}
+
+.team-svg-ul {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.team-svg-a {
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.svg-icon {
+    fill: #f4f4fd;
+}
+
+.team-svg-a:hover,
+.team-svg-a:focus {
+    background-color: #404bbf;
+}
+
+
+
+
 .portfolio {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -248,6 +308,12 @@ font-family: 'Raleway', sans-serif;
 
 .portfolio-item {
     width: calc((100% - 48) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-item:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-div {
@@ -279,6 +345,33 @@ font-family: 'Raleway', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+ }
+ .portfolio-wrapper {
+     position: relative;
+     overflow: hidden;
+     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ /* Ефект при наведенні */
+ .portfolio-li:hover .portfilio-wrapper-text-p {
+     transform: translateY(0);
+ }
+
+ .portfilio-wrapper-text {
+     background-color: #4d5ae5;
+     color: #f4f4fd;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     transform: translateY(100%);
+     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+     padding: 40px 32px;
+     font-weight: 400;
+     font-size: 16px;
+     line-height: 1.5;
+     letter-spacing: 0.02em;
  }
  .logo {
      font-family: "Raleway", sans-serif;
@@ -317,3 +410,43 @@ font-family: 'Raleway', sans-serif;
     color: #f4f4fd;
     max-width: 264px;
     }
+
+    .footer-container {
+            display: flex;
+            align-items: baseline;
+            /* gap: 120px; */
+        }
+    .footer-text-link {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: 0.02em;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+    .footer-svg-ul {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            justify-content: center;
+        }
+    .footer-svg-a {
+            background-color: #4D5AE5;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    .fotter-svg ul li svg {
+            fill: white;
+        }
+    .footer-svg-a:hover,
+    .footer-svg-a:focus {
+            background-color: #31D0AA;
+        }
+    .footer-logo {
+            margin-right: 120px;
+        }
